@@ -5,8 +5,14 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
-
+import pandas as pd
 def pregunta_07():
+    nombre = "files/input/tbl0.tsv"
+    
+    df = pd.read_csv(nombre, sep="\t")
+    conteo = df.groupby('c1')['c2'].sum()
+    return conteo
+
     """
     Calcule la suma de la `c2` por cada letra de la `c1` del archivo
     `tbl0.tsv`.

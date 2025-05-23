@@ -5,8 +5,12 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
-
+import pandas as pd
 def pregunta_05():
+    nombre = "files/input/tbl0.tsv"
+    df = pd.read_csv(nombre, sep="\t")
+    maximo = df.groupby('c1')['c2'].max()
+    return maximo
     """
     Calcule el valor máximo de `c2` por cada letra en la columna `c1` del
     archivo `tbl0.tsv`.
